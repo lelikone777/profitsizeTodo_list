@@ -30,7 +30,7 @@ function createItem() {
         </span>
         <span class="book__item-checkmark checkmark"></span>
     </label>`;
-    bookList.append(bookItem)
+    bookList.prepend(bookItem)
     document.querySelector('input[name="text"]').value = '';
     document.querySelector('input[name="subtext"]').value = '';
 }
