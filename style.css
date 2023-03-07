@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+:root {
+  font-size: 0.3125vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: radial-gradient(50% 50% at 50% 50%, #252E42 0%, #161C2E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.book {
+  max-width: 420px;
+  width: 100%;
+  height: 75vh;
+  max-height: 540px;
+  position: relative;
+  background: #252E42;
+  animation: shadow 10s infinite linear;
+  border-radius: 20px 0 40px;
+}
+.book:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 3px;
+  width: 250rem;
+  max-width: 397px;
+  height: 111px;
+  background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+  border-radius: 20px;
+  transform: matrix(1, -0.05, 0.03, 1, 0, 0);
+  z-index: -1;
+}
+.book:after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 6px;
+  display: block;
+  width: 210rem;
+  max-width: 342px;
+  height: 110px;
+  background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+  border-radius: 20px;
+  transform: matrix(1, -0.09, 0.06, 1, 0, 0);
+  z-index: -2;
+}
+.book__wrap {
+  padding: 30px 16px 10px 30px;
+  height: 100%;
+  width: 100%;
+}
+.book__wrap:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 92%;
+  height: 44rem;
+  background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
+  border-radius: 0 0 20px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.book__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.book__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-right: 16px;
+}
+.book__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: #FFFFFF;
+}
+.book__button {
+  padding: 5px 10px;
+  background: #FF8469;
+  border-radius: 7px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.book__button:hover {
+  background-color: #D95133;
+}
+.book__body {
+  height: 82%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+.book__list {
+  padding-bottom: 20px;
+}
+.book__item {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+.book__item-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding: 9px 0 9px 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+}
+.book__item-label:hover .checkmark {
+  background: rgba(255, 132, 105, 0.2);
+  transition: all 0.3s;
+}
+.book__item-label:hover .book__item-text {
+  transition: all 0.3s;
+  color: #FF8469;
+}
+.book__item-label .checkmark {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4F5565;
+}
+.book__item-label .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.book__item-text {
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.book__item-subtext {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4F5565;
+}
+.book__item-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.book__item-checkbox:checked ~ .checkmark {
+  background: #FF8469;
+}
+.book__item-checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+.book__item-checkbox:checked ~ .book__item-text {
+  text-decoration-line: line-through;
+  color: #4F5565;
+}
+.book__item-checkbox:checked ~ .book__item-text:hover {
+  color: #FFFFFF;
+}
+.book__item .checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  background: #4F5565;
+  border-radius: 6px;
+}
+.book__item .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.book__modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.book__modal.open {
+  display: block;
+}
+.book__modal-overlay {
+  width: 100%;
+  height: 100%;
+}
+.book__modal-body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  width: 95%;
+  background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+  border-radius: 20px;
+  padding: 15px 20px;
+}
+.book__modal-form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.book__modal-input {
+  border-radius: 4px;
+  padding: 6px 12px;
+  background: #4F5565;
+  color: #FFFFFF;
+}
+.book__modal-button {
+  padding: 5px 10px;
+  background: #FF8469;
+  border-radius: 7px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.book__modal-button:hover {
+  background-color: #D95133;
+}
+.book__author {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #414B62;
+  white-space: nowrap;
+}
+
+.simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.2s 0.5s linear;
+  background: #FF8469;
+  border-radius: 10px;
+}
+
+@media (min-width: 550px) {
+  :root {
+    font-size: 1.71875px;
+  }
+}
+@media (orientation: landscape) and (max-height: 550px) {
+  :root {
+    font-size: 0.3125vh;
+  }
+  .book__body {
+    height: 70%;
+  }
+  .book__wrap:before {
+    bottom: 7%;
+  }
+}
+@keyframes shadow {
+  0% {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+  }
+  25% {
+    box-shadow: 20px 28px 14px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 40px 2px rgba(0, 0, 0, 0.25);
+  }
+  75% {
+    box-shadow: -30px 0px 24px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profitsize</title>
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="book">
+
+    <div class="book__wrap">
+        <div class="book__inner">
+            <div class="book__header">
+                <h2 class="book__title">Todo list</h2>
+                <button class="book__button">Add</button>
+            </div>
+            <div class="book__body" data-simplebar>
+                <ul class="book__list">
+                    <li class="book__item">
+                        <label class="book__item-label">
+                            <input class="book__item-checkbox" type="checkbox">
+                            <span class="book__item-text">
+                                delectus aut autem
+                            </span>
+                            <span class="book__item-subtext">
+                                laboriosam mollitia et enim quasi adipisci quia provident illum
+                            </span>
+                            <span class="book__item-checkmark checkmark"></span>
+                        </label>
+                    </li>
+                    <li class="book__item">
+                        <label class="book__item-label">
+                            <input class="book__item-checkbox" type="checkbox">
+                            <span class="book__item-text">
+                               quo laboriosam deleniti aut qui
+                            </span>
+                            <span class="book__item-subtext"></span>
+                            <span class="book__item-checkmark checkmark"></span>
+                        </label>
+                    </li>
+                    <li class="book__item">
+                        <label class="book__item-label">
+                            <input class="book__item-checkbox" type="checkbox">
+                            <span class="book__item-text">
+                               laboriosam mollitia et enim quasi adipisci quia provident illum
+                            </span>
+                            <span class="book__item-subtext"></span>
+                            <span class="book__item-checkmark checkmark"></span>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="book__author">
+            © 2022. Kalinin Aleksei
+        </div>
+    </div>
+
+    <div class="book__modal">
+        <div class="book__modal-overlay"></div>
+        <div class="book__modal-body">
+            <form class="book__modal-form">
+                <input class="book__modal-input" type="text" name="text" placeholder="Add task text">
+                <input class="book__modal-input" type="text" name="subtext" placeholder="Add description">
+                <button class="book__modal-button" type="button">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
