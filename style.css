@@ -217,6 +217,19 @@ body {
   position: absolute;
   display: none;
 }
+.book__item-del {
+  display: inline-block;
+  padding: 2px 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+}
+.book__item-del img {
+  height: 20px;
+  width: 20px;
+}
 .book__modal {
   display: none;
   position: fixed;

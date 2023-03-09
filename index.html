@@ -18,6 +18,7 @@
             <div class="book__header">
                 <h2 class="book__title">Todo list</h2>
                 <button class="book__button">Add</button>
+
             </div>
             <div class="book__body" data-simplebar>
                 <ul class="book__list">
@@ -32,6 +33,7 @@
                             </span>
                             <span class="book__item-checkmark checkmark"></span>
                         </label>
+                        <button class="book__item-del"><img src="trash.svg" alt="trash"></button>
                     </li>
                     <li class="book__item">
                         <label class="book__item-label">
@@ -42,6 +44,7 @@
                             <span class="book__item-subtext"></span>
                             <span class="book__item-checkmark checkmark"></span>
                         </label>
+                        <button class="book__item-del"><img src="trash.svg" alt="trash"></button>
                     </li>
                     <li class="book__item">
                         <label class="book__item-label">
@@ -52,13 +55,14 @@
                             <span class="book__item-subtext"></span>
                             <span class="book__item-checkmark checkmark"></span>
                         </label>
+                        <button class="book__item-del"><img src="trash.svg" alt="trash"></button>
                     </li>
 
                 </ul>
             </div>
         </div>
         <div class="book__author">
-            © 2022. Kalinin Aleksei
+            © 2023. Kalinin Aleksei
         </div>
     </div>
 
@@ -66,9 +70,9 @@
         <div class="book__modal-overlay"></div>
         <div class="book__modal-body">
             <form class="book__modal-form">
-                <input class="book__modal-input" type="text" name="text" placeholder="Add task text">
+                <input class="book__modal-input" type="text" name="text" required placeholder="Add task text">
                 <input class="book__modal-input" type="text" name="subtext" placeholder="Add description">
-                <button class="book__modal-button" type="button">Add Task</button>
+                <button class="book__modal-button" type="submit">Add Task</button>
             </form>
         </div>
     </div>
